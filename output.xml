@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.14.0 on win32)" generated="2026-11-01T18:14:49.094113" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="C:\Users\zakir\Desktop\robot-framework-playwright-demo\tests\login_tests.robot">
+<kw name="Open Application" owner="keywords" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-11-01T18:14:50.187731" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\zakir\\Desktop\\robot-framework-playwright-demo\\browser\\traces\\temp\\13cfcaef-f813-423f-8f9f-dfbc4edb9935"}</msg>
+<msg time="2026-11-01T18:14:50.284229" level="INFO">Starting Browser process C:\Users\zakir\Desktop\robot-framework-playwright-demo\venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:59026</msg>
+<msg time="2026-11-01T18:14:52.593156" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\zakir\\Desktop\\robot-framework-playwright-demo\\browser\\traces\\temp\\13cfcaef-f813-423f-8f9f-dfbc4edb9935"}</msg>
+<arg>chromium</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-11-01T18:14:50.186147" elapsed="2.407721"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-11-01T18:14:53.720605" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com</msg>
+<msg time="2026-11-01T18:14:53.720838" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-11-01T18:14:52.594620" elapsed="1.126849"/>
+</kw>
+<status status="PASS" start="2026-11-01T18:14:50.184509" elapsed="3.537249"/>
+</kw>
+<test id="s1-t1" name="Successful Login Test" line="11">
+<kw name="Enter Valid Credentials" owner="keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-11-01T18:14:53.765896" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-11-01T18:14:53.764592" elapsed="0.166507"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-11-01T18:14:53.932561" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-11-01T18:14:53.931473" elapsed="0.020003"/>
+</kw>
+<status status="PASS" start="2026-11-01T18:14:53.763132" elapsed="0.188594"/>
+</kw>
+<kw name="Submit Login" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-11-01T18:14:53.954744" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-11-01T18:14:53.953721" elapsed="0.097049"/>
+</kw>
+<status status="PASS" start="2026-11-01T18:14:53.952582" elapsed="0.098535"/>
+</kw>
+<kw name="Verify Successful Login" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-11-01T18:14:54.313183" level="INFO">Waited for Element with selector css=.inventory_list at state visible</msg>
+<arg>css=.inventory_list</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-11-01T18:14:54.053315" elapsed="0.260212"/>
+</kw>
+<status status="PASS" start="2026-11-01T18:14:54.052050" elapsed="0.261761"/>
+</kw>
+<status status="PASS" start="2026-11-01T18:14:53.721961" elapsed="0.592633"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-11-01T18:14:54.489094" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-11-01T18:14:54.338073" elapsed="0.151417"/>
+</kw>
+<status status="PASS" start="2026-11-01T18:14:49.097905" elapsed="5.391831"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Tests" id="s1" pass="1" fail="0" skip="0">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
